@@ -10,6 +10,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 ALLOWED_HOSTS = ['*']
 SITE_ID = 1
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
 ##################################################################
 # Debug settings (with docker)
 ##################################################################
