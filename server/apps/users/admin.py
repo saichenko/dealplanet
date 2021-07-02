@@ -6,11 +6,11 @@ from .models.users import User
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
-    list_filter = ('email', 'full_name', 'date_joined', 'is_teacher')
+    list_filter = ('email', 'date_joined')
     readonly_fields = ('id', 'date_joined', 'last_login')
-    search_fields = ('email', 'full_name')
-    list_display = ('email', 'full_name', 'date_joined', 'last_login',
-                    'is_admin', 'is_staff', 'is_teacher')
+    search_fields = ('email', 'username')
+    list_display = ('email', 'date_joined', 'last_login',
+                    'is_admin', 'is_staff')
 
     ordering = ('id',)
     filter_horizontal = ()
