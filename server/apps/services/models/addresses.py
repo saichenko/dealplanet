@@ -26,11 +26,11 @@ class Address(models.Model):
     )
     longitude = models.DecimalField(
         max_digits=18,
-        decimal_places=3
+        decimal_places=3,
     )
     latitude = models.DecimalField(
         max_digits=18,
-        decimal_places=3
+        decimal_places=3,
     )
     is_default = models.BooleanField(
         verbose_name='Основной'
