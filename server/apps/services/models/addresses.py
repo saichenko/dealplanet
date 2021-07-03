@@ -1,6 +1,6 @@
-from django.db import models
-from yandex_geocoder import Client, YandexGeocoderException
 from django.conf import settings
+from django.db import models
+from yandex_geocoder import Client
 
 
 class Address(models.Model):
