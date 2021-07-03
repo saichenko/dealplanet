@@ -1,7 +1,11 @@
 from django.db import models
+from yandex_geocoder import Client, YandexGeocoderException
+from django.conf import settings
 
 
 class Address(models.Model):
+    """A model represents users address."""
+
     user = models.ForeignKey(
         to='users.User',
         verbose_name='пользователь',
@@ -38,6 +42,18 @@ class Address(models.Model):
 
     def __str__(self):
         return f'{self.name}'
+
+    def set_coordinates(self):
+        """Set coords to `longitude` and `latitude` fields
+        before saving model instance.
+        """
+        client = Client(api_key=settings.YANDEX_GEOCODER_KEY)
+        address = f'Россия, {self.state}, {self.city}, {self.street}'
+        self.longitude, self.latitude = client.coordinates(address)
+
+    def save(self, *args, **kwargs):
+        self.set_coordinates()
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'адрес'
