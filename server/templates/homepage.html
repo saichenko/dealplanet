@@ -1,0 +1,241 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Главная - DealPlanet.ru</title>
+
+    <link rel="stylesheet" media="all" href="{% static 'assets/store.css' %}"/>
+
+    <noscript>
+        <link rel="stylesheet" media="all" href="{% static '/assets/nojs.css' %}"/>
+    </noscript>
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="{% static 'assets/main/favicon/apple-touch-icon-57x57.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="{% static 'assets/main/favicon/apple-touch-icon-114x114.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="{% static 'assets/main/favicon/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="{% static 'assets/main/favicon/apple-touch-icon-144x144.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"
+          href="{% static 'assets/main/favicon/apple-touch-icon-60x60.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="{% static 'assets/main/favicon/apple-touch-icon-120x120.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"
+          href="{% static 'assets/main/favicon/apple-touch-icon-76x76.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="{% static 'assets/main/favicon/apple-touch-icon-152x152.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'assets/main/favicon/favicon-196x196.png' %}" sizes="196x196">
+    <link rel="icon" type="image/png" href="{% static 'assets/main/favicon/favicon-96x96.png' %}" sizes="96x96">
+    <link rel="icon" type="image/png" href="{% static 'assets/main/favicon/favicon-32x32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'assets/main/favicon/favicon-16x16.png' %}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{% static 'assets/main/favicon/favicon-128.png' %}" sizes="128x128">
+
+    <meta name="application-name" content="DealPlanet">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="{% static 'assets/main/favicon/mstile-144x144.png' %}">
+    <meta name="msapplication-square70x70logo" content="{% static 'assets/main/favicon/mstile-70x70.png' %}">
+    <meta name="msapplication-square150x150logo" content="{% static '/assets/main/favicon/mstile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="{% static '/assets/main/favicon/mstile-310x150.png' %}">
+    <meta name="msapplication-square310x310logo" content="{% static '/assets/main/favicon/mstile-310x310.png' %}">
+
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:card" content="">
+
+    <meta property="fb:app_id" content="">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DealPlanet.ru">
+    <meta property="og:locale" content="ru_ru">
+    <meta property="og:url" content="index.html">
+    <meta property="og:title" content="DealPlanet.ru">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/assets/main/logo%402x.png">
+    <meta name="twitter:title" content="DealPlanet.ru">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="/assets/main/logo%402x.png">
+
+</head>
+<body id="homepage" class="">
+
+<header>
+    <!-- <nav class="navbar" style="border-bottom:0;">
+      <div class="container">
+        <div class="social">
+          <a href="http://facebook.com/" class="icon-o-facebook" title="DealPlanet.ru on Facebook" target="_blank"></a>
+          <a href="http://twitter.com/" class="icon-o-twitter" title="DealPlanet.ru on Twitter" target="_blank"></a>
+          <a href="http://instagram.com/" class="icon-o-instagram" title="DealPlanet.ru on Instagram" target="_blank"></a>
+        </div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="top-nav">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="about.html">About Us</a></li>
+            <li><a class="remote-modal" id="user-welcome" data-class="welcome1 in" href="user/welcome.html">How it Works</a></li>
+            <li><a href="support/faq.html">FAQ</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a id="user-supernova" href="/supernovas/winners">Supernova Winners</a></li>
+            <li><a class="remote-modal" id="user-signup" href="users/register.html"><span class="icon-user"></span> Sign Up</a></li>
+            <li><a class="remote-modal" id="user-login" href="users/login.html"><span class="icon-login"></span> Login</a></li>
+            <li style="display:none;"><a class="remote-modal" id="user-sale" data-class="product-sale" href="user/sale.html"></a></li>
+            <li style="display:none;"><a class="remote-modal" id="user-invites" data-class="refer-friends-promo" href="user/show_invites.html"></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+
+    <div class="container mid">
+        <div class="col-sm-12">
+            <h1 title="DealPlanet.ru"><a href="/">DealPlanet.ru</a></h1>
+            <form action="" class="search navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="search" placeholder="Я ищу ..." name="for" required class="form-control" value="">
+                    <span class="input-group-btn">
+            <button type="submit" class="btn btn-default"><span class="icon-search"></span></button>
+          </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <nav class="cat">
+        <div class="container text-xs-center text-md-left">
+            <a class="active" href="#">Все</a>
+            <a class="" href="#">Категория 1</a>
+            <a class="" href="#">Категория 2</a>
+            <a class="" href="#">Категория 3</a>
+            <a class="" href="#">Дешевле 100₽</a>
+        </div>
+    </nav>
+
+    <div class="banners container-fluid">
+<!--        <div class="col-sm-6 left">-->
+<!--            <a>-->
+<!--                <img src="https://via.placeholder.com/728x90" alt="...">-->
+<!--            </a>-->
+<!--        </div>-->
+
+<!--        <div class="col-sm-6 right">-->
+<!--            <a>-->
+<!--                <img src="https://via.placeholder.com/728x90" alt="...">-->
+<!--            </a>-->
+<!--        </div>-->
+    </div>
+
+</header>
+
+<div id="content">
+    <div class="container">
+
+
+        <div class="slot-wrapper clearfix">
+
+            <!-- <div class="clock-slot col-xs-6 col-sm-4 col-md-3">
+                <div id="clock">
+                    <div id="clock-countdown"> <em>Новые предложения через</em>
+                        <br> <strong><span class="zero">00:</span><span>00:</span><span>00</span></strong> </div>
+                    <div id="clock-loading"> <em>Загрузка новых товаров</em>
+                        <br> <img src="/assets/spinner.gif" alt="Загрузка" />
+                    </div>
+                    <a class="remote-modal" data-class="welcome1 in" data-page="2" href="user/welcome.html">Что это?</a>
+                </div>
+            </div> -->
+
+            {% for offer in offers %}
+            <div id="slot_1" class="slot col-xs-6 col-sm-4 col-md-3">
+                <a class="clearfix outbound" title="" target="_blank" href="{{ offer.url }}">
+                    <div class="img">
+                        <img class="product" src="{{ offer.image.url }}"/>
+                    </div>
+                    <strong>{{ offer.name }}</strong>
+                    <div class="price">
+                        <b>Экономия {{ offer.discount }}%</b> {{ offer.discount_price }}₽ <small>
+                        <del>{{ offer.base_price }}₽</del>
+                        Ритейл</small>
+                    </div>
+                </a>
+                <a class="info" href="{{ offer.url }}" target="_blank">Подробнее</a>
+            </div><!--/.slot-->
+            {% endfor %}
+
+        </div><!--/.slot-wrapper-->
+
+
+        <div id="slots-appear">
+            <img src="/assets/loading-huge.gif" alt="Loading huge"/>
+        </div>
+
+    </div>
+</div>
+
+
+<footer>
+
+    <nav class="cat">
+        <a class="active" href="#">Все</a>
+        <a class="" href="#">Категория 1</a>
+        <a class="" href="#">Категория 2</a>
+        <a class="" href="#">Категория 3</a>
+        <a class="" href="#">Дешевле 100₽</a>
+    </nav>
+
+    <!-- <nav class="site">
+      <div class="container">
+        <div class="text-xs-center text-md-left  col-md-6">
+          <a href="index.html">
+            <span class="icon-link-arrow"></span>Home
+</a>          <a href="about.html">
+            <span class="icon-link-arrow"></span>About Us
+</a>          <a class="remote-modal" data-class="welcome1 in" href="user/welcome.html">
+            <span class="icon-link-arrow"></span>How It Works
+</a>          <a href="support/faq.html">
+            <span class="icon-link-arrow"></span>FAQ
+</a>          <a href="support.html">
+            <span class="icon-link-arrow"></span>Help
+</a>        </div>
+        <div class="text-xs-center text-md-right  col-md-6">
+          <a href="about/terms.html">
+            <span class="icon-link-arrow"></span>Terms
+</a>          <a href="about/privacy.html">
+            <span class="icon-link-arrow"></span>Privacy
+</a>          <a href="support/faq.html#returns">
+            <span class="icon-link-arrow"></span>Returns
+</a>        </div>
+      </div>
+    </nav> -->
+    <div class="main">
+        <div class="container">
+            <div class="col-sm-4 company">
+                <div class="align-xs-center align-sm-left">
+                    <h1 title="DealPlanet.ru"><a href="index.html">DealPlanet.ru</a></h1>
+                    &copy; Copyright 2021
+                </div>
+            </div>
+            <!-- <div class="col-sm-8 badges text-xs-center text-sm-right">
+               <a target="_blank" href="http://facebook.com/" title="DealPlanet.ru on Facebook"><img alt="DealPlanet.ru on Facebook" src="/assets/main/footer-social-f.png" /></a>
+               <a target="_blank" href="http://twitter.com/" title="DealPlanet.ru on Twitter"><img alt="DealPlanet.ru on Twitter" src="/assets/main/footer-social-t.png" /></a>
+               <a target="_blank" href="http://instagram.com/" title="DealPlanet.ru on Instagram"><img alt="DealPlanet.ru on Instagram" src="/assets/main/footer-social-i.png" /></a>
+             </div> -->
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    window.device_type = 'desktop';
+</script>
+<script src=""></script>
+
+</body>
+
+</html> 
