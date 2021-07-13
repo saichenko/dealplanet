@@ -10,6 +10,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 ALLOWED_HOSTS = ['*']
 SITE_ID = 1
 
+AUTH_USER_MODEL = 'users.User'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
 ##################################################################
 # Debug settings (with docker)
 ##################################################################
@@ -158,3 +163,5 @@ REST_FRAMEWORK = {
 
 if DEBUG:
     del REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES']
+
+YANDEX_GEOCODER_KEY = '1934adac-bcef-4dc3-8f39-a57fc22c1b52'

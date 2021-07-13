@@ -11,7 +11,9 @@ INSTALLED_APPS = [
 ]
 
 LOCAL_APPS = [
-    'apps.test',
+    'apps.users',
+    'apps.services',
+    'apps.offers'
 ]
 
 INSTALLED_APPS += LOCAL_APPS
