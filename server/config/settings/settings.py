@@ -25,7 +25,19 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 # Databases settings (with docker)
 ##################################################################
 
-DATABASES = {'default': dj_database_url.config()}
+if DEBUG:
+    DATABASES = {'default': dj_database_url.config()}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'defaultdb',
+            'USER': 'doadmin',
+            'PASSWORD': 'x5cp8dv4xcp2etjc',
+            'HOST': 'db-postgresql-fra1-25458-do-user-9005948-0.b.db.ondigitalocean.com',
+            'PORT': '25060',
+        }
+    }
 
 ##################################################################
 # Logging settings
