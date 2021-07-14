@@ -15,7 +15,10 @@ RUN python ./manage.py collectstatic --noinput
 FROM nginx:1.17.8
 
 RUN rm -v /etc/nginx/nginx.conf
+
 COPY ./nginx/nginx.conf /etc/nginx/
+COPY ./nginx/certificates /etc/nginx/certs/
 
 RUN mkdir /nginx
 COPY --from=server /server/staticfiles /nginx/static
+COPY --from=server /server/media /nginx/media
