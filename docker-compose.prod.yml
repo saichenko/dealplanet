@@ -19,8 +19,6 @@ services:
         command: gunicorn config.wsgi -c ./config/gunicorn.py
         volumes:
             - ./server/media:/server/media
-        depends_on:
-            - db
         environment:
             DEBUG: 'False'
             DATABASE_URL: 'postgres://postgres:@db:5432/postgres'
