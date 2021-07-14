@@ -10,6 +10,7 @@ services:
             - 80:80
         volumes:
             - ./server/media:/nginx/media
+            - ./nginx/certificates:/etc/nginx/certs
 
     server:
         build:
@@ -24,9 +25,3 @@ services:
             DEBUG: 'False'
             DATABASE_URL: 'postgres://postgres:@db:5432/postgres'
             BROKER_URL: 'amqp://user:password@rabbitmq:5672/my_vhost'
-
-    db:
-        image: postgres:11.2
-        environment:
-            POSTGRES_DB: postgres
-            POSTGRES_USER: postgres
