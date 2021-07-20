@@ -13,7 +13,8 @@
     <link rel="stylesheet" media="all" href="{% static 'assets/store.css' %}"/>
 
     <noscript>
-        <link rel="stylesheet" media="all" href="{% static '/assets/nojs.css' %}"/>
+        <link rel="stylesheet" media="all"
+              href="{% static '/assets/nojs.css' %}"/>
     </noscript>
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57"
@@ -32,19 +33,34 @@
           href="{% static 'assets/main/favicon/apple-touch-icon-76x76.png' %}">
     <link rel="apple-touch-icon-precomposed" sizes="152x152"
           href="{% static 'assets/main/favicon/apple-touch-icon-152x152.png' %}">
-    <link rel="icon" type="image/png" href="{% static 'assets/main/favicon/favicon-196x196.png' %}" sizes="196x196">
-    <link rel="icon" type="image/png" href="{% static 'assets/main/favicon/favicon-96x96.png' %}" sizes="96x96">
-    <link rel="icon" type="image/png" href="{% static 'assets/main/favicon/favicon-32x32.png' %}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{% static 'assets/main/favicon/favicon-16x16.png' %}" sizes="16x16">
-    <link rel="icon" type="image/png" href="{% static 'assets/main/favicon/favicon-128.png' %}" sizes="128x128">
+    <link rel="icon" type="image/png"
+          href="{% static 'assets/main/favicon/favicon-196x196.png' %}"
+          sizes="196x196">
+    <link rel="icon" type="image/png"
+          href="{% static 'assets/main/favicon/favicon-96x96.png' %}"
+          sizes="96x96">
+    <link rel="icon" type="image/png"
+          href="{% static 'assets/main/favicon/favicon-32x32.png' %}"
+          sizes="32x32">
+    <link rel="icon" type="image/png"
+          href="{% static 'assets/main/favicon/favicon-16x16.png' %}"
+          sizes="16x16">
+    <link rel="icon" type="image/png"
+          href="{% static 'assets/main/favicon/favicon-128.png' %}"
+          sizes="128x128">
 
     <meta name="application-name" content="DealPlanet">
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="{% static 'assets/main/favicon/mstile-144x144.png' %}">
-    <meta name="msapplication-square70x70logo" content="{% static 'assets/main/favicon/mstile-70x70.png' %}">
-    <meta name="msapplication-square150x150logo" content="{% static '/assets/main/favicon/mstile-150x150.png">
-    <meta name="msapplication-wide310x150logo" content="{% static '/assets/main/favicon/mstile-310x150.png' %}">
-    <meta name="msapplication-square310x310logo" content="{% static '/assets/main/favicon/mstile-310x310.png' %}">
+    <meta name="msapplication-TileImage"
+          content="{% static 'assets/main/favicon/mstile-144x144.png' %}">
+    <meta name="msapplication-square70x70logo"
+          content="{% static 'assets/main/favicon/mstile-70x70.png' %}">
+    <meta name="msapplication-square150x150logo"
+          content="{% static '/assets/main/favicon/mstile-150x150.png">
+    <meta name="msapplication-wide310x150logo"
+          content="{% static '/assets/main/favicon/mstile-310x150.png' %}">
+    <meta name="msapplication-square310x310logo"
+          content="{% static '/assets/main/favicon/mstile-310x310.png' %}">
 
     <meta name="twitter:creator" content="">
     <meta name="twitter:site" content="">
@@ -100,9 +116,11 @@
             <h1 title="DealPlanet.ru"><a href="/">DealPlanet.ru</a></h1>
             <form action="" class="search navbar-form navbar-left">
                 <div class="input-group">
-                    <input type="search" placeholder="Я ищу ..." name="for" required class="form-control" value="">
+                    <input type="search" placeholder="Я ищу ..." name="name"
+                           required class="form-control" value="">
                     <span class="input-group-btn">
-            <button type="submit" class="btn btn-default"><span class="icon-search"></span></button>
+            <button type="submit" class="btn btn-default"><span
+                    class="icon-search"></span></button>
           </span>
                 </div>
             </form>
@@ -111,26 +129,36 @@
 
     <nav class="cat">
         <div class="container text-xs-center text-md-left">
-            <a class="active" href="#">Все</a>
-            <a class="" href="#">Телефоны</a>
-            <a class="" href="#">Компьютеры</a>
-            <a class="" href="#">Смартфоны</a>
-            <a class="" href="#">Пылесоы</a>
+            {% if not current_cat and not request.get.name %}
+            <a class="active" href="/">Все</a>
+            {% else %}
+            <a href="/">Все</a>
+            {% endif %}
+            {% for category in categories %}
+
+            {% if current_cat == category.id %}
+            <a class="active" href="?category={{ category.id }}">
+                {{ category.name }}</a>
+            {% else %}
+            <a href="?category={{ category.id }}">{{ category.name }}</a>
+            {% endif %}
+
+            {% endfor %}
         </div>
     </nav>
 
     <div class="banners container-fluid">
-<!--        <div class="col-sm-6 left">-->
-<!--            <a>-->
-<!--                <img src="https://via.placeholder.com/728x90" alt="...">-->
-<!--            </a>-->
-<!--        </div>-->
+        <!--        <div class="col-sm-6 left">-->
+        <!--            <a>-->
+        <!--                <img src="https://via.placeholder.com/728x90" alt="...">-->
+        <!--            </a>-->
+        <!--        </div>-->
 
-<!--        <div class="col-sm-6 right">-->
-<!--            <a>-->
-<!--                <img src="https://via.placeholder.com/728x90" alt="...">-->
-<!--            </a>-->
-<!--        </div>-->
+        <!--        <div class="col-sm-6 right">-->
+        <!--            <a>-->
+        <!--                <img src="https://via.placeholder.com/728x90" alt="...">-->
+        <!--            </a>-->
+        <!--        </div>-->
     </div>
 
 </header>
@@ -154,13 +182,15 @@
 
             {% for offer in offers %}
             <div id="slot_1" class="slot col-xs-6 col-sm-4 col-md-3">
-                <a class="clearfix outbound" title="" target="_blank" href="{{ offer.url }}">
+                <a class="clearfix outbound" title="" target="_blank"
+                   href="{{ offer.url }}">
                     <div class="img">
                         <img class="product" src="{{ offer.image.url }}"/>
                     </div>
                     <strong>{{ offer.name }}</strong>
                     <div class="price">
-                        <b>Экономия {{ offer.discount }}%</b> {{ offer.discount_price }}₽ <small>
+                        <b>Экономия {{ offer.discount }}%</b>
+                        {{ offer.discount_price }}₽ <small>
                         <del>{{ offer.base_price }}₽</del>
                         Ритейл</small>
                     </div>
@@ -181,13 +211,23 @@
 
 
 <footer>
-
     <nav class="cat">
-        <a class="active" href="#">Все</a>
-        <a class="" href="#">Телефоны</a>
-        <a class="" href="#">Компьютеры</a>
-        <a class="" href="#">Смартфоны</a>
-        <a class="" href="#">Пылесоы</a>
+        {% if not current_cat and not request.get.name %}
+            <a class="active" href="/">Все</a>
+        {% else %}
+            <a href="/">Все</a>
+        {% endif %}
+
+        {% for category in categories %}
+        {% if current_cat == category.id %}
+        <a class="active" href="?category={{ category.id }}">
+            {{ category.name }}
+        </a>
+        {% else %}
+        <a href="?category={{ category.id }}">{{ category.name }}</a>
+        {% endif %}
+
+        {% endfor %}
     </nav>
 
     <!-- <nav class="site">
@@ -218,7 +258,8 @@
         <div class="container">
             <div class="col-sm-4 company">
                 <div class="align-xs-center align-sm-left">
-                    <h1 title="DealPlanet.ru"><a href="index.html">DealPlanet.ru</a></h1>
+                    <h1 title="DealPlanet.ru"><a href="/">DealPlanet.ru</a>
+                    </h1>
                     &copy; Copyright 2021
                 </div>
             </div>

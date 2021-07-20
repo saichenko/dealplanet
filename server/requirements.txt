@@ -12,4 +12,5 @@ Pillow==8.3.0 # для работы с изображениями
 djangorestframework==3.12.4 # API
 django-url-filter==0.3.15 # улучшенные фильтры для DRF
 
-yandex-geocoder==2.0.0 # получение координат ресторана
+yandex-geocoder==2.0.0 # получение координат
+django-filter==2.4.0
