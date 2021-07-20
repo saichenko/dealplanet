@@ -5,7 +5,8 @@ from django.db import models
 class Offer(models.Model):
     category = models.ForeignKey(
         to='services.Category',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='offers'
     )
     name = models.CharField(
         verbose_name='название',
@@ -68,3 +69,4 @@ class Offer(models.Model):
     class Meta:
         verbose_name = 'предложение'
         verbose_name_plural = 'предложения'
+        ordering = ['discount']
