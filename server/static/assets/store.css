@@ -9596,6 +9596,7 @@ footer nav.site .right {
 .slot-wrapper .slot {
 	margin-bottom: 20px;
 	padding: 0px 10px;
+	min-height: 330px;
 }
 
 .slot-wrapper .slot>a {
