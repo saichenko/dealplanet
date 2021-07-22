@@ -181,7 +181,7 @@
             </div> -->
 
             {% for offer in offers %}
-            <div id="slot_1" class="slot col-xs-6 col-sm-4 col-md-3">
+            <div id="slot_{{ offer.id }}" class="slot col-xs-6 col-sm-4 col-md-3">
                 <a class="clearfix outbound" title="" target="_blank"
                    href="{{ offer.url }}">
                     <div class="img">
