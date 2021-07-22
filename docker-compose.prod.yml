@@ -8,6 +8,7 @@ services:
             - server
         ports:
             - 80:80
+            - 443:443
         volumes:
             - ./server/media:/nginx/media
 
@@ -18,15 +19,5 @@ services:
         command: gunicorn config.wsgi -c ./config/gunicorn.py
         volumes:
             - ./server/media:/server/media
-        depends_on:
-            - db
         environment:
             DEBUG: 'False'
-            DATABASE_URL: 'postgres://postgres:@db:5432/postgres'
-            BROKER_URL: 'amqp://user:password@rabbitmq:5672/my_vhost'
-
-    db:
-        image: postgres:11.2
-        environment:
-            POSTGRES_DB: postgres
-            POSTGRES_USER: postgres
