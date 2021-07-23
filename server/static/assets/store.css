@@ -87,6 +87,12 @@ svg:not(:root) {
 	overflow: hidden;
 }
 
+@media (max-width: 768px) {
+	.slot-wrapper .slot {
+		min-height: 400px;
+	}
+}
+
 figure {
 	margin: 1em 40px;
 }
