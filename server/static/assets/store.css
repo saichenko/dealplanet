@@ -88,11 +88,28 @@ svg:not(:root) {
 }
 
 @media (max-width: 768px) {
-	.slot-wrapper .slot {
-		min-height: 400px;
-	}
+
+.slot-wrapper .slot {
+  min-height: 400px !important;
+  }
+
 }
 
+@media (max-width: 576px) {
+
+.slot-wrapper .slot {
+  min-height: 330px !important;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+.slot-wrapper .slot {
+  min-height: 300px !important;
+  }
+
+}
 figure {
 	margin: 1em 40px;
 }
